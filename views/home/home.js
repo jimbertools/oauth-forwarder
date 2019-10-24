@@ -3,15 +3,22 @@ module.exports = {
   name: 'home',
   components: {},
   props: [],
-  data () {
+  data() {
     return {
-
+      callback: ''
     }
   },
   computed: {
 
   },
-  mounted () {
+
+  mounted() {
+    this.callback = this.$route.query.callback
+    if (this.callback !== undefined) {
+      console.log(this.callback)
+      this.$cookies.set("callback", this.callback)
+      window.location = '/'
+    }
     require('firebase/auth')
     var ui = new firebaseui.auth.AuthUI(firebase.auth())
     ui.start('#firebaseui-auth-container', {
