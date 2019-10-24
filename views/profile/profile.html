@@ -1,0 +1,14 @@
+<section class="home fill-height">
+    <v-row class="fill-height" align="center">
+        <v-col>
+            <v-col rows="12" align="center" justify="center" class="mb-5">
+                <v-avatar size="100" color="primary" class="mb-4">
+                    <img :src="profile.photoURL">
+                </v-avatar>
+                <h1 class="display-2 font-weight-bold text-uppercase">{{profile.displayName}}</h1>
+                <p>{{profile.email}}</p>
+                <p>{{profile.phoneNumber}}</p>
+            </v-col>
+        </v-col>
+    </v-row>
+</section>
